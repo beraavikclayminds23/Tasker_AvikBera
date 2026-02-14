@@ -28,6 +28,7 @@
     "react-native-gesture-handler": "latest",
     "react-native-safe-area-context": "^5.5.2",
     "react-native-screens": "^4.23.0",
+     "react-native-date-picker": "^5.0.13",
     "react-native-vector-icons": "^10.3.0",
     "react-redux": "^9.2.0",
     "realm": "^20.2.0"
