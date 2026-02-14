@@ -1,27 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import AuthStack from './AuthStack';
 import AppStack from './AppStack';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
-import { setUser, setLoading } from '../store/slices/authSlice';
+import { setUser } from '../store/slices/authSlice';
 import { ActivityIndicator, View } from 'react-native';
 
 const AppNavigator = () => {
     const dispatch = useAppDispatch();
-    const { user, loading } = useAppSelector((state) => state.auth);
+    const { user } = useAppSelector((state) => state.auth);
     const [initializing, setInitializing] = useState(true);
 
-    // Handle user state changes
-    function onAuthStateChanged(user: FirebaseAuthTypes.User | null) {
+const onAuthStateChanged = useCallback(
+    (user: FirebaseAuthTypes.User | null) => {
         dispatch(setUser(user));
-        if (initializing) setInitializing(false);
-    }
+        setInitializing(false);
+    },
+    [dispatch]
+);
+
+
 
     useEffect(() => {
         const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
         return subscriber; // unsubscribe on unmount
-    }, []);
+    }, [onAuthStateChanged]);
 
     if (initializing) {
         return (

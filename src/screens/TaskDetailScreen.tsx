@@ -31,7 +31,7 @@ const { useRealm, useObject } = TaskRealmContext;
 type TaskDetailScreenRouteProp = RouteProp<AppStackParamList, 'TaskDetail'>;
 
 const BRAND = '#2E5BFF';
-const BRAND_DARK = '#1A3FCC';
+// const BRAND_DARK = '#1A3FCC';
 const AMBER = '#F59E0B';
 const AMBER_BG_L = '#FFFBEB';
 const AMBER_BG_D = '#2A2010';
@@ -66,7 +66,7 @@ const TaskDetailScreen = () => {
 
   useEffect(() => {
     Animated.timing(fadeAnim, { toValue: 1, duration: 380, useNativeDriver: true }).start();
-  }, []);
+  }, [fadeAnim]);
 
   useEffect(() => {
     if (task) {

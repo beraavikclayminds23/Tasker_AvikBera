@@ -75,7 +75,7 @@ const TaskListScreen = () => {
 
     useEffect(() => {
         Animated.timing(fadeAnim, { toValue: 1, duration: 400, useNativeDriver: true }).start();
-    }, []);
+    }, [fadeAnim]);
 
     const tasks = useQuery(Task).filtered('userId == $0', user?.uid).sorted('createdAt', true);
 

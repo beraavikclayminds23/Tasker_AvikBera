@@ -8,7 +8,6 @@ import {
   ActivityIndicator,
   Alert,
   Animated,
-  Dimensions,
   KeyboardAvoidingView,
   Platform,
   StatusBar,
@@ -27,7 +26,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 type LoginScreenNavigationProp = StackNavigationProp<AuthStackParamList, 'Login'>;
 
-const { width } = Dimensions.get('window');
+// const { width } = Dimensions.get('window');
 
 const BRAND = '#2E5BFF';
 const BRAND_DARK = '#1A3FCC';
@@ -68,7 +67,7 @@ const LoginScreen = () => {
         Animated.timing(glowAnim, { toValue: 0, duration: 2400, useNativeDriver: false }),
       ])
     ).start();
-  }, []);
+  }, [bottomFade, cardSlide, fadeAnim, glowAnim, logoSlide]);
 
   const glowOpacity = glowAnim.interpolate({ inputRange: [0, 1], outputRange: [0.06, 0.20] });
 

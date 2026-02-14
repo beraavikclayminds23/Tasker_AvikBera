@@ -99,7 +99,7 @@ const SignUpScreen = () => {
         Animated.timing(glowAnim, { toValue: 0, duration: 2400, useNativeDriver: false }),
       ])
     ).start();
-  }, []);
+  }, [bottomFade, cardSlide, fadeAnim, glowAnim, logoSlide]);
 
   const glowOpacity = glowAnim.interpolate({ inputRange: [0, 1], outputRange: [0.06, 0.20] });
 
