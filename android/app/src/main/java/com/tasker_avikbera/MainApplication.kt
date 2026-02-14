@@ -1,4 +1,4 @@
-package com.tasker_avikbera
+package com.taskmanagementavikbera23_gmail_com
 
 import android.app.Application
 import com.facebook.react.PackageList
