@@ -79,6 +79,6 @@ npm run build:android
 ## ⚠️ Known Limitations
 
 - **Sync Conflict Resolution**: Currently follows a "last-write-wins" approach. Complex merging of concurrent edits on the same task from multiple devices is not yet implemented.
-- **Push Notification Config**: Requires manual setup of `google-services.json` (Android) and `GoogleService-Info.plist` (iOS) from the Firebase Console to work correctly.
+- **Push Notification Config**: Requires manual setup of google-services.json (Android) and GoogleService-Info.plist (iOS), as well as configuring the Apple Sign-In P8 key in the Apple Developer account via the Firebase Console, to work correctly.
 - **Offline Sync Latency**: Large batches of offline changes may take a few seconds to synchronize once the connection is restored, depending on network speed.
 - **Platform Support**: Optimized for the latest versions of Android and iOS; legacy OS versions may experience UI inconsistencies.
