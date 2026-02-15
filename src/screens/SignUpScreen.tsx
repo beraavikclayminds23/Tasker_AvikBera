@@ -12,6 +12,7 @@ import {
   Platform,
   StatusBar,
   ScrollView,
+  Image,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import auth from '@react-native-firebase/auth';
@@ -177,8 +178,8 @@ const SignUpScreen = () => {
         >
           {/* ── Header ── */}
           <Animated.View style={[styles.header, { opacity: fadeAnim, transform: [{ translateY: logoSlide }] }]}>
-            <View style={styles.logoBox}>
-              <View style={styles.logoInner} />
+            <View>
+              <Image source={require('../../assets/TaskerImg.png')} style={styles.logoInner} />
             </View>
             <Text style={[styles.headline, { color: theme.text }]}>Create account</Text>
             <Text style={[styles.subline, { color: labelClr }]}>Sign up to get started</Text>
@@ -391,8 +392,8 @@ const styles = StyleSheet.create({
     elevation: 12,
   },
   logoInner: {
-    width: 24,
-    height: 24,
+    width: 80,
+    height: 80,
     borderRadius: 7,
     borderWidth: 3,
     borderColor: '#fff',
